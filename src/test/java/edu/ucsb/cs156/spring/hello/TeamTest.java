@@ -58,6 +58,14 @@ public class TeamTest {
     }
 
     @Test
+    public void equals_returns_false_for_different_members() {
+        Team other = new Team("test-team");
+        other.addMember("foo");
+        other.addMember("baz");
+        assertNotEquals(team, other);
+    }
+
+    @Test
     public void hashCode_returns_correct_hash_code() {
         Team t1 = new Team();
         t1.setName("foo");
